@@ -80,6 +80,10 @@ mkdir -p ${AGENT_DIR}/logs
 ln -s ${LOGS_DIR} ${AGENT_DIR}/logs/exp
 ln -s ${CODE_DIR} ${AGENT_DIR}/workspaces/exp/best_solution
 ln -s ${SUBMISSION_DIR} ${AGENT_DIR}/workspaces/exp/best_submission
+# print the openai package version for debugging
+python -c "import openai; print('openai package version:', openai.__version__)"
+python -c "import httpx; print('httpx package version:', httpx.__version__)"
+
 
 # run with timeout, and print if timeout occurs
 timeout $TIME_LIMIT_SECS aide data_dir="/home/data/" desc_file="${AGENT_DIR}/full_instructions.txt" \

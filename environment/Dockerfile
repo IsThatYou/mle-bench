@@ -35,6 +35,9 @@ RUN pip install virtualenv \
     && rm /tmp/miniconda.sh \
     && /opt/conda/bin/conda init
 
+RUN /opt/conda/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main \
+    && /opt/conda/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
 ARG CONDA_ENV_NAME=agent
 ARG PYTHON_VERSION=3.11
 ARG REQUIREMENTS=/tmp/requirements.txt
