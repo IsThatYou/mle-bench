@@ -71,14 +71,15 @@ aide/Qwen3-Coder-480B:
   <<: *defaults
   kwargs:
     <<: *kwargs_common
-    agent.code.model: together_ai/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8
+    agent.code.model: Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8
     agent.code.temp: 1
-    agent.feedback.model: together_ai/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8
+    agent.feedback.model: Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8
     agent.steps: *step_count
     agent.convert_system_to_user: True
   env_vars:
     <<: *env_vars
     OPENAI_API_KEY: ${{ secrets.Fede_TOGETHER_API }}
+    OPENAI_BASE_URL: https://api.together.xyz/v1
 
 aide/Qwen3-235B-Instruct-2507:
   <<: *defaults
@@ -92,6 +93,7 @@ aide/Qwen3-235B-Instruct-2507:
   env_vars:
     <<: *env_vars
     OPENAI_API_KEY: ${{ secrets.Fede_TOGETHER_API }}
+    OPENAI_BASE_URL: https://api.together.xyz/v1
 
 aide/Kimi-K2-Thinking:
   <<: *defaults
@@ -105,6 +107,7 @@ aide/Kimi-K2-Thinking:
   env_vars:
     <<: *env_vars
     OPENAI_API_KEY: ${{ secrets.Fede_TOGETHER_API }}
+    OPENAI_BASE_URL: https://api.together.xyz/v1
 
 
 aide/o1-preview:
